@@ -17,25 +17,25 @@ context = {};
 
 app.get('/', function(req, res){
     if(req.session.ainumber == undefined){
-        console.log("New Game Starting")
-        req.session.ainumber = Math.floor(Math.random()*100)+1
+        console.log("New Game Starting");
+        req.session.ainumber = Math.floor(Math.random()*100)+1;
         status = 'none';
-        context = {status: status}
+        context = {status: status};
     } else {
-        console.log("Page refresh, existing game is on")
-        context = {status: status}
-    };
+        console.log("Page refresh, existing game is on");
+        context = {status: status};
+    }
     res.render('index', context);
 });
 
 app.post('/guess', function(req, res){
     console.log(req.body);
-    console.log(req.session.ainumber)
+    console.log(req.session.ainumber);
     console.log("*****************************************************");
 
     if(req.body.guess > req.session.ainumber){
         status = 'high';
-        console.log("Status = ", status)
+        console.log("Status = ", status);
     }
     else if(req.body.guess < req.session.ainumber){
         status = 'low';
@@ -49,7 +49,7 @@ app.post('/guess', function(req, res){
 });
 
 app.post('/reset', function(req, res){
-    console.log('resetting game')
+    console.log('resetting game');
     req.session.ainumber = undefined;
     res.redirect('/');
 });

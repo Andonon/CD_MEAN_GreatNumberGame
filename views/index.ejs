@@ -17,7 +17,7 @@
                 <input type='submit' id='submit' value='submit'>
             </form>
             <% if(context.status == 'high'){ %>
-                <div id="results" style='font-color: white; background-color: red; display: block'>
+                <div id="results" style='color: white; background-color: red; display: block'>
                     <div id="resultsoutput">
                         <h4>You're too <%=context.status%></h4>
                     </div>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             <% } else if(context.status == 'win'){ %>
-                <div id="results" style='font-color: black; background-color: green; display: block'>
+                <div id="results" style='color: black; background-color: green; display: block'>
                     <div id="resultsoutput">
                         <h4>You <%=context.status%>!</h4>
                         <form id='resetform' action='/reset' method='POST'>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             <% } else if(context.status == 'low'){ %>
-                <div id="results" style='font-color: white; background-color: red; display: block'>
+                <div id="results" style='color: white; background-color: red; display: block'>
                     <div id="resultsoutput">
                         <h4>You're too <%=context.status%></h4>
                     </div>

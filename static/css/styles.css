@@ -44,4 +44,11 @@ footer {
     transform: translateY(-50%);
     
 }
-
+#reset{
+    position: relative;
+    top: 20px;
+    height: 20px;
+    width: 150px;
+    box-shadow: 3px 3px 3px grey;
+    background-color: lightgreen;
+}
