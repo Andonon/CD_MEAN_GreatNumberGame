@@ -17,34 +17,33 @@
                 <input type='submit' id='submit' value='submit'>
             </form>
             <% if(context.status == 'high'){ %>
-                <div id="results" style='background-color: red; display: block'>
+                <div id="results" style='font-color: white; background-color: red; display: block'>
                     <div id="resultsoutput">
-                        <%=context.status%>
-                        </div>
+                        <h4>You're too <%=context.status%></h4>
                     </div>
+                </div>
             <% } else if(context.status == 'none'){ %>
                 <div id="results" style='display: none'>
                     <div id="resultsoutput">
-                    <%=context.status%>
+                        <h4>You weren't supposed to see this. Status: <%=context.status%></h4>
                     </div>
                 </div>
             <% } else if(context.status == 'win'){ %>
-                <div id="results" style='background-color: green; display: block'>
+                <div id="results" style='font-color: black; background-color: green; display: block'>
                     <div id="resultsoutput">
-                    <%=context.status%>
-                    <form id='resetform' action='/reset' method='POST'>
-                        <input type='submit' name='reset' id='reset' value='Play Again'>
-                    </form>
+                        <h4>You <%=context.status%>!</h4>
+                        <form id='resetform' action='/reset' method='POST'>
+                            <input type='submit' name='reset' id='reset' value='Play Again'>
+                        </form>
                     </div>
                 </div>
             <% } else if(context.status == 'low'){ %>
-                <div id="results" style='background-color: red; display: block'>
+                <div id="results" style='font-color: white; background-color: red; display: block'>
                     <div id="resultsoutput">
-                    <%=context.status%>
+                        <h4>You're too <%=context.status%></h4>
                     </div>
                 </div>
             <% } %>
-
         </div>
     </body>
 </html>
